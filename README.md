@@ -23,9 +23,11 @@ servicenow-help-desk-portfolio/
 │   ├── ticket-02-wifi-dns/             (15 screenshots)
 │   └── ticket-03-ip-conflict/          (12 screenshots)
 └── performance-tickets/
-    ├── ticket-04-disk-usage/           (14 screenshots)
-    ├── ticket-05-ram-usage/            (6 screenshots)
-    └── ticket-06-slow-boot/            (2 screenshots)
+├── ticket-04-disk-usage/           (14 screenshots)
+├── ticket-05-ram-usage/            (6 screenshots)
+└── ticket-06-slow-boot/            (2 screenshots)
+
+
 
 ## Incidents Resolved
 
