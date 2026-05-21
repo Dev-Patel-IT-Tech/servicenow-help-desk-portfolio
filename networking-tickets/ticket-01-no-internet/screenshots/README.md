@@ -4,7 +4,7 @@
 
 **Incident Number:** INC0010006  
 **Category:** Network Connectivity  
-**Priority:** P3 (Medium)  
+**Priority:** P1 (Critical)  
 **Assignment Group:** Help Desk  
 **Assigned To:** Dev Patel
 
@@ -25,28 +25,27 @@ Network adapter driver corruption caused by recent Windows Update. Driver versio
 
 ## Diagnostic Process
 
-1. Verified physical network connection (Ethernet cable properly seated)
-2. Executed ipconfig /all - confirmed valid IP assignment from DHCP
-3. Tested external connectivity via ping 8.8.8.8 - Request timed out (no external access)
-4. Tested internal connectivity via ping to default gateway - Successful (local network functional)
+1. Verified physical network connection
+2. Executed ipconfig /all - confirmed DHCP IP assignment
+3. Tested external connectivity via ping to Google DNS - Request timed out
+4. Tested internal connectivity via ping to default gateway - Successful
 5. Opened Device Manager - identified yellow exclamation mark on network adapter
 6. Reviewed driver properties - confirmed incorrect driver version
 7. Checked Event Viewer System logs - located driver load failure entries
 
 ## Resolution Steps
 
-1. Opened Device Manager (devmgmt.msc)
+1. Opened Device Manager
 2. Navigated to Network adapters section
 3. Right-clicked problematic adapter → selected "Uninstall device"
 4. Enabled "Delete the driver software for this device" checkbox
 5. Confirmed uninstallation
 6. Initiated system restart
-7. Windows automatically detected hardware on boot
-8. Windows installed correct driver from driver store
-9. Verified connectivity: ping google.com successful
-10. Tested all affected applications: browser, Outlook, Teams - all functional
-11. Documented resolution steps in ServiceNow Work Notes
-12. Closed ticket with timestamp
+7. Windows automatically detected hardware and installed correct driver on boot
+8. Verified connectivity with ping test
+9. Tested all affected applications - all functional
+10. Documented resolution steps in ServiceNow Work Notes
+11. Closed ticket
 
 ## Commands Executed
 
@@ -55,28 +54,55 @@ ipconfig /all
 ipconfig /release
 ipconfig /renew
 ping 8.8.8.8
-ping 192.168.1.1
 ping google.com
-devmgmt.msc
 ```
+
+## Screenshots
+
+![Screenshot a1](./screenshots/a1.png)  
+*ServiceNow incident dashboard showing INC0010006*
+
+![Screenshot b1](./screenshots/b1.png)  
+*Device Manager with network adapter right-click menu*
+
+![Screenshot c1](./screenshots/c1.png)  
+*ipconfig command output showing network configuration*
+
+![Screenshot d1](./screenshots/d1.png)  
+*Driver uninstall confirmation dialog*
+
+![Screenshot e1](./screenshots/e1.png)  
+*System restart prompt*
+
+![Screenshot f1](./screenshots/f1.png)  
+*Windows driver reinstallation in progress*
+
+![Screenshot g1](./screenshots/g1.png)  
+*Successful connectivity test*
+
+![Screenshot h1](./screenshots/h1.png)  
+*Browser connectivity restored*
+
+![Screenshot i1](./screenshots/i1.png)  
+*ServiceNow ticket marked Resolved*
 
 ## Outcome
 
 **Time to Resolution:** 23 minutes  
 **Impact:** Single user  
 **Total Downtime:** 23 minutes  
-**Follow-up Action:** Created KB article documenting driver reinstallation procedure for future reference
+**Follow-up Action:** Created KB article for driver reinstallation procedure
 
 ## Technical Skills Demonstrated
 
-- Network troubleshooting methodology (OSI model layer isolation)
+- Network troubleshooting methodology
 - Windows Device Manager proficiency
-- Command-line diagnostic tools (ipconfig, ping)
+- Command-line diagnostic tools
 - Event Viewer log analysis
-- ServiceNow incident lifecycle management
+- ServiceNow incident documentation
 - Root cause analysis
-- Knowledge base documentation
+- Knowledge base creation
 
 ## Key Insights
 
-Network adapter issues frequently resolve with driver reinstallation rather than advanced troubleshooting. Always verify Device Manager for hardware errors before escalating. Document driver versions in Work Notes for trend analysis across similar incidents.
+Network adapter issues frequently resolve with driver reinstallation rather than advanced troubleshooting. Always verify Device Manager for hardware errors before escalating. Document driver versions in Work Notes for trend analysis.
