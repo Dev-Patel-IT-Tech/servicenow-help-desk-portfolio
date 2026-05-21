@@ -11,23 +11,21 @@ Help desk incident management across network connectivity and Windows 11 perform
 
 Resolved help desk incidents in ServiceNow Personal Developer Instance with full ITSM workflows from ticket creation through diagnostic troubleshooting to resolution closure. Documented Tier-1 technical support capabilities across network connectivity issues and Windows 11 performance optimization.
 
-**Network incidents:** DNS cache corruption, DHCP addressing failures, IP address conflicts  
-**Performance incidents:** Disk space critical alerts, high RAM utilization, slow boot times  
+**Network incident resolution:** DNS cache corruption, DHCP addressing failures, IP address conflicts  
+**Performance incident resolution:** Disk space critical alerts, high RAM utilization, slow boot times  
 **ITSM methodology:** Incident creation, Work Notes, root cause analysis, resolution documentation, KB articles
 
-## Repository Structure
+## Incident Categories
 
 servicenow-help-desk-portfolio/
 ├── networking-tickets/
-│   ├── ticket-01-no-internet/          (9 screenshots)
-│   ├── ticket-02-wifi-dns/             (15 screenshots)
-│   └── ticket-03-ip-conflict/          (12 screenshots)
+│   ├── ticket-01-no-internet/
+│   ├── ticket-02-wifi-dns/
+│   └── ticket-03-ip-conflict/
 └── performance-tickets/
-├── ticket-04-disk-usage/           (14 screenshots)
-├── ticket-05-ram-usage/            (6 screenshots)
-└── ticket-06-slow-boot/            (2 screenshots)
-
-
+    ├── ticket-04-disk-usage/
+    ├── ticket-05-ram-usage/
+    └── ticket-06-slow-boot/
 
 ## Incidents Resolved
 
