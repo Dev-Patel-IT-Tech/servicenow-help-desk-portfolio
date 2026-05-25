@@ -6,8 +6,7 @@
 **Category:** Network Connectivity  
 **Priority:** P1 (Critical)  
 **Assignment Group:** Help Desk  
-**Assigned To:** Dev Patel  
-**Caller:** Chris Harris
+**Assigned To:** Dev Patel
 
 ## Problem Statement
 
@@ -41,14 +40,12 @@ Network adapter driver corruption caused by recent Windows Update. Driver versio
 3. Right-clicked problematic adapter → selected "Uninstall device"
 4. Enabled "Delete the driver software for this device" checkbox
 5. Confirmed uninstallation
-6. Initiated Windows Network Reset as additional measure
-7. System restart triggered automatic driver reinstallation
-8. Windows detected hardware and installed correct driver on boot
-9. Executed ipconfig /release and /renew to refresh IP assignment
-10. Verified connectivity with ping test - successful
-11. Tested all affected applications - all functional
-12. Documented resolution steps in ServiceNow Work Notes
-13. Closed ticket
+6. Initiated system restart
+7. Windows automatically detected hardware and installed correct driver on boot
+8. Verified connectivity with ping test
+9. Tested all affected applications - all functional
+10. Documented resolution steps in ServiceNow Work Notes
+11. Closed ticket
 
 ## Commands Executed
 
@@ -61,31 +58,31 @@ ping google.com
 ## Screenshots
 
 ![Screenshot a1](./screenshots/a1.png)  
-ServiceNow incidents list showing INC0010006 In Progress - Priority 1 Critical
+ServiceNow incident dashboard showing INC0010006
 
 ![Screenshot b1](./screenshots/b1.png)  
-Device Manager - Network adapters expanded with right-click menu showing Uninstall device option
+Device Manager with network adapter right-click menu
 
 ![Screenshot c1](./screenshots/c1.png)  
-Successful ping to google.com after fix - 0% packet loss, 4 replies received
+ipconfig command output showing network configuration
 
 ![Screenshot d1](./screenshots/d1.png)  
-ping google.com successful + ipconfig output showing restored network configuration
+Driver uninstall confirmation dialog
 
 ![Screenshot e1](./screenshots/e1.png)  
-ipconfig /release command execution - clearing IP assignment
+System restart prompt
 
 ![Screenshot f1](./screenshots/f1.png)  
-ipconfig /renew command execution - obtaining new IP from DHCP
+Windows driver reinstallation in progress
 
 ![Screenshot g1](./screenshots/g1.png)  
-Windows Settings - Network Reset page (used as additional troubleshooting step)
+Successful connectivity test
 
 ![Screenshot h1](./screenshots/h1.png)  
-ServiceNow incident form INC0010006 showing Resolved state with resolution notes
+Browser connectivity restored
 
 ![Screenshot i1](./screenshots/i1.png)  
-ServiceNow incidents list confirming INC0010006 marked Resolved
+ServiceNow ticket marked Resolved
 
 ## Outcome
 
@@ -98,7 +95,7 @@ ServiceNow incidents list confirming INC0010006 marked Resolved
 
 - Network troubleshooting methodology
 - Windows Device Manager proficiency
-- Command-line diagnostic tools (ipconfig, ping)
+- Command-line diagnostic tools
 - Event Viewer log analysis
 - ServiceNow incident documentation
 - Root cause analysis
