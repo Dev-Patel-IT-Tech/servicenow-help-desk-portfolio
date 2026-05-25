@@ -61,31 +61,31 @@ ping google.com
 ## Screenshots
 
 ![Screenshot a1](./screenshots/a1.png)  
-*ServiceNow incidents list showing INC0010006 In Progress - Priority 1 Critical*
+ServiceNow incidents list showing INC0010006 In Progress - Priority 1 Critical
 
 ![Screenshot b1](./screenshots/b1.png)  
-*Device Manager - Network adapters expanded with right-click menu showing Uninstall device option*
+Device Manager - Network adapters expanded with right-click menu showing Uninstall device option
 
 ![Screenshot c1](./screenshots/c1.png)  
-*Successful ping to google.com after fix - 0% packet loss, 4 replies received*
+Successful ping to google.com after fix - 0% packet loss, 4 replies received
 
 ![Screenshot d1](./screenshots/d1.png)  
-*ping google.com successful + ipconfig output showing restored network configuration*
+ping google.com successful + ipconfig output showing restored network configuration
 
 ![Screenshot e1](./screenshots/e1.png)  
-*ipconfig /release command execution - clearing IP assignment*
+ipconfig /release command execution - clearing IP assignment
 
 ![Screenshot f1](./screenshots/f1.png)  
-*ipconfig /renew command execution - obtaining new IP from DHCP*
+ipconfig /renew command execution - obtaining new IP from DHCP
 
 ![Screenshot g1](./screenshots/g1.png)  
-*Windows Settings - Network Reset page (used as additional troubleshooting step)*
+Windows Settings - Network Reset page (used as additional troubleshooting step)
 
 ![Screenshot h1](./screenshots/h1.png)  
-*ServiceNow incident form INC0010006 showing Resolved state with resolution notes*
+ServiceNow incident form INC0010006 showing Resolved state with resolution notes
 
 ![Screenshot i1](./screenshots/i1.png)  
-*ServiceNow incidents list confirming INC0010006 marked Resolved*
+ServiceNow incidents list confirming INC0010006 marked Resolved
 
 ## Outcome
 
