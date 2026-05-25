@@ -59,22 +59,37 @@ No command-line tools required - Task Manager GUI sufficient for diagnosis and r
 ## Screenshots
 
 ![Screenshot a5](./screenshots/a5.png)  
-*Task Manager showing 94% memory usage*
+*Task Manager Processes tab showing high memory usage*
 
 ![Screenshot b5](./screenshots/b5.png)  
-*Chrome with 22 processes consuming 1,832.9 MB*
+*Chrome process tree with 22 sub-processes*
 
 ![Screenshot c5](./screenshots/c5.png)  
-*Performance tab - Memory graph at 94%*
+*Task Manager Performance tab - Memory at 94%*
 
 ![Screenshot d5](./screenshots/d5.png)  
-*Chrome tabs open in browser*
+*Memory graph visualization*
 
 ![Screenshot e5](./screenshots/e5.png)  
-*Startup applications - 8 enabled*
+*Chrome tabs open in browser*
 
 ![Screenshot f5](./screenshots/f5.png)  
-*Memory usage after cleanup - 56%*
+*Microsoft Edge background processes*
+
+![Screenshot g5](./screenshots/g5.png)  
+*Ending Chrome task*
+
+![Screenshot h5](./screenshots/h5.png)  
+*Memory usage after closing Chrome*
+
+![Screenshot i5](./screenshots/i5.png)  
+*Startup applications tab*
+
+![Screenshot j5](./screenshots/j5.png)  
+*Disabling unnecessary startup apps*
+
+![Screenshot k5](./screenshots/k5.png)  
+*Final memory usage - 56%*
 
 ## Outcome
 
