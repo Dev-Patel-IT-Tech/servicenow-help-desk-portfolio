@@ -55,7 +55,7 @@ Critically low disk space (16.8 GB free of 236 GB) combined with excessive tempo
 14. Selected cleanup categories: Temporary Internet Files, Recycle Bin, system temporary files
 15. Confirmed deletion and initiated cleanup process
 16. Monitored cleanup progress (2,269 items recycled from Temp folder)
-17. Verified total disk space freed approximately 29.6 GB significantly improving available storage
+17. Verified successful deletion of 2,269 items from Temp folder improving available storage capacity
 18. Documented resolution steps in ServiceNow Work Notes
 19. Confirmed with user immediate performance improvement
 20. Updated incident to Resolved status
@@ -113,7 +113,7 @@ ServiceNow Resolution Information showing Resolved status with detailed resoluti
 **Time to Resolution:** 34 minutes  
 **Status:** Resolved  
 **Resolution Code:** Solution provided  
-**Disk Space Freed:** Approximately 29.6 GB from temporary file cleanup  
+**Items Removed:** 2,269 temporary files and system cache successfully deleted  
 **Verified:** User confirmed immediate performance improvement with applications opening faster and system lag eliminated
 
 ## Technical Skills Demonstrated
