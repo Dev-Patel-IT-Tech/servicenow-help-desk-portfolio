@@ -6,7 +6,8 @@
 **Category:** Network Connectivity  
 **Priority:** P1 (Critical)  
 **Assignment Group:** Help Desk  
-**Assigned To:** Dev Patel
+**Assigned To:** Dev Patel  
+**Caller:** Mathew Taylor
 
 ## Problem Statement
 
@@ -62,49 +63,49 @@ nslookup google.com 8.8.8.8
 ## Screenshots
 
 ![Screenshot a2](./screenshots/a2.png)  
-*ServiceNow incidents dashboard - INC0010007 In Progress*
+ServiceNow incidents list showing INC0010007 In Progress - Wi-Fi connected but websites won't load
 
 ![Screenshot b2](./screenshots/b2.png)  
-*Browser DNS error message*
+Command Prompt - ipconfig /all output showing wireless adapter IP configuration
 
 ![Screenshot c2](./screenshots/c2.png)  
-*ipconfig /all output showing network configuration*
+Command Prompt - ipconfig /all continued showing disconnected adapters
 
 ![Screenshot d2](./screenshots/d2.png)  
-*Successful ping to external IP address*
+Command Prompt - ipconfig output + ping to default gateway showing successful connectivity
 
 ![Screenshot e2](./screenshots/e2.png)  
-*Failed ping to domain name*
+Command Prompt - ping to default gateway showing 4 successful replies (local network functional)
 
 ![Screenshot f2](./screenshots/f2.png)  
-*nslookup showing DNS failure*
+Wi-Fi adapter properties dialog showing network adapter configuration
 
 ![Screenshot g2](./screenshots/g2.png)  
-*Command Prompt elevated to Administrator*
+Computer Management window opened for network troubleshooting
 
 ![Screenshot h2](./screenshots/h2.png)  
-*Network adapter properties - Device Manager view*
+Computer Management - navigating to Device Manager section
 
 ![Screenshot i2](./screenshots/i2.png)  
-*Network adapters expanded in Device Manager*
+Computer Management showing Device Manager and Storage sections
 
 ![Screenshot j2](./screenshots/j2.png)  
-*DNS server configuration - Google DNS settings*
+Web browser successfully loading Google.com after DNS fix
 
 ![Screenshot k2](./screenshots/k2.png)  
-*Successful nslookup after DNS flush*
+ServiceNow incident form INC0010007 showing incident details and In Progress state
 
 ![Screenshot m2](./screenshots/m2.png)  
-*Browser connectivity restored*
+ServiceNow Work Notes tab showing documented diagnostic steps and timestamp
 
 ![Screenshot n2](./screenshots/n2.png)  
-*Email client reconnected*
+ServiceNow Work Notes list displaying multiple troubleshooting entries
 
 ![Screenshot o2](./screenshots/o2.png)  
-*ServiceNow Resolution Information tab with documented steps*
+ServiceNow incident form showing complete incident details before resolution
 
 ![Screenshot p2](./screenshots/p2.png)  
-*ServiceNow ticket marked Resolved*
+ServiceNow incidents list confirming INC0010007 marked Resolved
 
 ## Outcome
 
