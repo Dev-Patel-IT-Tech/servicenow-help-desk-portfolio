@@ -1,4 +1,3 @@
-```markdown
 # DNS Resolution Failure
 
 ## Incident Information
@@ -55,12 +54,10 @@ DNS resolution failure. Device connected to WiFi and could reach router/internet
 
 ## Commands Executed
 
-```cmd
 ipconfig
 ping [gateway IP]
 ping 8.8.8.8
 ipconfig /flushdns
-```
 
 ## Screenshots
 
@@ -131,4 +128,3 @@ ServiceNow incidents list confirming INC0010007 marked Resolved
 ## Key Insights
 
 DNS resolution failures are extremely common in help desk environments. WiFi showing "Connected" with full signal confuses users because it appears internet is working. Always isolate failure layer systematically: test gateway connectivity (local network), test external IP connectivity (internet), then test DNS resolution. Google Public DNS (8.8.8.8/8.8.4.4) provides reliable fallback when ISP DNS fails. Network adapter reset via Device Manager forces clean reconnection without system reboot.
-```
