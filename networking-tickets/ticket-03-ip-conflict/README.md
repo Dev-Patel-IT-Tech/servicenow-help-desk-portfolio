@@ -3,113 +3,119 @@
 ## Incident Information
 
 **Incident Number:** INC0010008  
-**Category:** Network Connectivity  
-**Priority:** P3 (Medium)  
+**Category:** Network  
+**Subcategory:** IP Address  
+**Priority:** 3 - Moderate  
+**Impact:** 2 - Medium  
+**Urgency:** 2 - Medium  
 **Assignment Group:** Help Desk  
-**Assigned To:** Dev Patel
+**Assigned To:** Dev Patel  
+**Caller:** Elisa Gracely
 
 ## Problem Statement
 
-User experiencing intermittent network disconnections every 5-10 minutes. Windows displaying "IP address conflict" error message. Network access would drop for 30-60 seconds before reconnecting automatically.
+User receiving error message stating another device is using the same IP address. Connection issues preventing stable network access.
 
 ## Symptoms
 
-- Recurring network disconnections at regular intervals
-- Windows notification: "There is an IP address conflict with another system on the network"
-- Intermittent loss of network resources
-- Applications timing out during disconnection periods
-- Email sync failures
+- Windows error popup: "Windows has detected an IP address conflict"
+- Message states another computer on network has same IP address
+- Intermittent network connectivity
+- Unable to maintain stable connection
 
 ## Root Cause
 
-Duplicate static IP address assignment on local subnet. Another device on the network was manually configured with the same IP address, causing ARP table conflicts when both devices attempted to communicate simultaneously.
+IP address conflict caused by DHCP lease assignment collision. Two devices on the network were temporarily assigned the same IP address, preventing stable connectivity.
 
 ## Diagnostic Process
 
-1. Observed "IP address conflict" Windows notification
-2. Executed ipconfig /all - identified static IP configuration
-3. Checked DHCP server logs - confirmed IP was outside DHCP scope
-4. Executed arp -a - identified duplicate MAC addresses for same IP
-5. Pinged conflicting IP from another device - multiple MAC responses
-6. Traced physical device causing conflict via switch port logs
-7. Confirmed static assignment was unauthorized
+1. Reviewed user-reported error message about duplicate IP address
+2. Opened Command Prompt to begin IP troubleshooting
+3. Executed ipconfig /release to clear current IP assignment
+4. Executed ipconfig /renew to request new IP from DHCP server
+5. Verified DHCP configuration using ipconfig /all
+6. Confirmed network adapter set to obtain IP automatically
+7. Verified WiFi connection settings in Windows Settings
 
 ## Resolution Steps
 
-1. Opened Network Adapter Properties
-2. Changed IP configuration from Static to "Obtain an IP address automatically" (DHCP)
-3. Executed ipconfig /release - cleared current IP assignment
-4. Executed ipconfig /renew - obtained new IP from DHCP pool
-5. Verified new IP with ipconfig /all - no conflict
-6. Executed arp -a - confirmed unique MAC-to-IP mapping
-7. Tested network stability for 30 minutes - no disconnections
-8. Updated CMDB with corrected network configuration
-9. Documented static IP assignment policy violation in Work Notes
-10. Closed ticket and created KB article on IP conflict resolution
+1. Opened Command Prompt as administrator
+2. Executed ipconfig /release to release current IP address assignment
+3. Executed ipconfig /renew to obtain new IP address from DHCP server
+4. Verified new IP address successfully assigned from DHCP pool
+5. Restarted system to clear cached network configurations and force fresh network initialization
+6. Executed ipconfig /all after restart to verify DHCP configuration
+7. Confirmed DHCP Enabled: Yes and valid IP assignment
+8. Opened Network Connections and accessed WiFi adapter properties
+9. Verified Internet Protocol Version 4 (TCP/IPv4) settings
+10. Confirmed "Obtain an IP address automatically" option selected
+11. Opened Windows Settings and navigated to Network & Internet
+12. Accessed WiFi settings and selected Manage known networks
+13. Verified current network accessible with option to forget/reconnect if needed
+14. Tested network connectivity and confirmed stable connection
+15. Documented resolution steps in ServiceNow Work Notes
+16. Updated incident to Resolved status with detailed resolution information
 
 ## Commands Executed
 
-ipconfig /all
 ipconfig /release
 ipconfig /renew
-arp -a
-ping [conflicting IP]
+ipconfig /all
 
 ## Screenshots
 
 ![Screenshot a3](./screenshots/a3.png)  
-*Windows IP address conflict notification*
+ServiceNow incidents list showing INC0010008 In Progress - Priority 3 Moderate assigned to Dev Patel
 
 ![Screenshot b3](./screenshots/b3.png)  
-*ipconfig /all showing static IP configuration*
+Windows Network Error dialog displaying IP address conflict message
 
 ![Screenshot c3](./screenshots/c3.png)  
-*ipconfig /release command execution*
+Command Prompt executing ipconfig /release command clearing IP assignment
 
 ![Screenshot d3](./screenshots/d3.png)  
-*Network adapter properties - static IP configuration*
+Command Prompt executing ipconfig /renew obtaining new IP address from DHCP server
 
 ![Screenshot e3](./screenshots/e3.png)  
-*Changing to DHCP configuration*
+Windows Start menu Power Options with Restart option highlighted
 
 ![Screenshot f3](./screenshots/f3.png)  
-*ipconfig /release clearing IP assignment*
+Command Prompt ipconfig /all output showing DHCP Enabled Yes and valid IP configuration
 
 ![Screenshot g3](./screenshots/g3.png)  
-*ipconfig /renew obtaining new IP*
+Network adapter IPv4 Properties dialog with Obtain an IP address automatically selected
 
 ![Screenshot h3](./screenshots/h3.png)  
-*New DHCP-assigned IP address*
+Windows Settings Network & Internet WiFi Manage known networks page with Forget option
 
 ![Screenshot i3](./screenshots/i3.png)  
-*ARP table after resolution - unique mapping*
+ServiceNow incident INC0010008 details page showing Resolved state
 
 ![Screenshot j3](./screenshots/j3.png)  
-*Network status - stable connectivity*
+ServiceNow Work Notes documenting troubleshooting steps and resolution process
 
 ![Screenshot k3](./screenshots/k3.png)  
-*ServiceNow CMDB update*
+ServiceNow Resolution Information with detailed resolution notes and steps performed
 
 ![Screenshot l3](./screenshots/l3.png)  
-*Ticket marked Resolved*
+ServiceNow incidents list showing INC0010008 Resolved status
 
 ## Outcome
 
-**Time to Resolution:** 18 minutes  
-**Impact:** Single user  
-**Downtime:** Intermittent (cumulative ~3 minutes over 30-minute period)  
-**Follow-up Action:** Updated network documentation, reminded team of DHCP-only policy
+**Time to Resolution:** 22 minutes  
+**Status:** Resolved  
+**Resolution Code:** Solution provided  
+**Verified:** User confirmed stable network connection with no further IP conflict errors
 
 ## Technical Skills Demonstrated
 
 - IP address conflict troubleshooting
-- ARP table analysis
-- DHCP vs static IP configuration
-- Network adapter configuration management
-- CMDB documentation practices
-- ServiceNow incident management
-- Network policy enforcement
+- DHCP client configuration management
+- Windows command-line network diagnostics
+- Network adapter configuration verification
+- ServiceNow incident documentation
+- Work notes and resolution information documentation
 
 ## Key Insights
 
-IP address conflicts typically stem from unauthorized static IP assignments. Always verify DHCP scope boundaries before troubleshooting. ARP table analysis is critical for identifying duplicate MAC addresses. Document all static IP assignments in CMDB to prevent future conflicts.
+IP address conflicts typically resolve through DHCP lease renewal using ipconfig /release and ipconfig /renew commands. Verifying DHCP configuration on network adapter ensures automatic IP assignment prevents future conflicts. System restart clears cached network configurations forcing fresh DHCP lease. Most IP conflicts resolve within first three troubleshooting steps without requiring advanced network analysis.
