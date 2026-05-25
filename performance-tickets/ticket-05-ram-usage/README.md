@@ -1,102 +1,132 @@
-# High RAM Utilization
+# Slow Computer Performance - High Disk Usage
 
 ## Incident Information
 
-**Incident Number:** INC0010010  
-**Category:** Windows Performance  
-**Priority:** P2 (High)  
+**Incident Number:** INC0010009  
+**Category:** Hardware  
+**Priority:** 3 - Moderate  
+**Impact:** 2 - Medium  
+**Urgency:** 2 - Medium  
 **Assignment Group:** Help Desk  
-**Assigned To:** Dev Patel
+**Assigned To:** Dev Patel  
+**Caller:** Rob Phillips
 
 ## Problem Statement
 
-User reported frequent system freezes, application crashes, and extreme slowdowns when multitasking. Investigation revealed RAM utilization at 94% (7.4 GB of 7.8 GB total), with Chrome browser consuming over 1,800 MB across 22 background processes.
+User reported computer extremely slow with applications freezing and lagging. Files not opening properly. System experiencing severe performance degradation.
 
 ## Symptoms
 
-- Applications freezing for 10-20 seconds
-- Chrome tabs crashing with "Out of memory" error
-- Unable to open new applications
-- System unresponsive during task switches
-- Windows notification: "Your computer is low on memory"
+- Computer running extremely slow
+- Applications freeze frequently
+- Everything lags during normal operations
+- Files and programs not opening properly
+- System performance significantly degraded
 
 ## Root Cause
 
-Chrome browser with 10 open tabs spawned 22 separate processes consuming 1,832.9 MB of RAM. Combined with 4 unnecessary startup applications (Microsoft Edge with 15 processes at 832.9 MB), total memory usage exceeded 94% on an 8 GB system.
+Critically low disk space (16.8 GB free of 236 GB) combined with excessive temporary file accumulation (29.6 GB) and unnecessary startup programs causing system performance degradation. Disk usage spikes reported reaching 100% during normal operations.
 
 ## Diagnostic Process
 
-1. Pressed Ctrl+Shift+Esc to open Task Manager
-2. Sorted Processes tab by Memory (descending)
-3. Identified Chrome as primary consumer - 1,832.9 MB across 22 processes
-4. Identified Microsoft Edge - 832.9 MB across 15 processes (running in background)
-5. Checked Performance tab - Memory at 7.4 GB / 7.8 GB (94%)
-6. Reviewed Startup tab - 8 applications enabled at boot
-7. Checked Chrome extensions - 6 extensions loaded (4 unused)
+1. Confirmed issue by opening Task Manager and reviewing Processes tab
+2. Examined Disk column to identify high disk usage patterns
+3. Identified processes consuming disk resources
+4. Checked Startup Apps for unnecessary programs launching at boot
+5. Verified drive type and capacity in This PC
+6. Reviewed Storage Settings to analyze disk space breakdown
+7. Located temporary files accumulation in AppData Local Temp folder
 
 ## Resolution Steps
 
-1. Opened Task Manager → Processes tab
-2. Expanded Chrome process tree - showed 22 sub-processes
-3. Right-clicked Chrome → End task
-4. Confirmed "End process" dialog
-5. Memory usage dropped to 5.6 GB (72%)
-6. Opened Microsoft Edge in Task Manager
-7. Ended Edge background processes - freed additional 832.9 MB
-8. Memory usage dropped to 4.4 GB (56%)
-9. Switched to Startup tab in Task Manager
-10. Disabled 4 unnecessary startup applications
-11. Opened Chrome Extensions page
-12. Removed 4 unused extensions
-13. Verified sustained memory usage under 60% for 15 minutes
-14. Documented resolution steps in ServiceNow Work Notes
-15. Created KB article on memory optimization
+1. Opened Task Manager to verify disk usage patterns
+2. Reviewed Processes tab and examined Disk column showing current 4% usage
+3. Accessed Startup apps section in Task Manager
+4. Identified unnecessary startup applications consuming resources
+5. Disabled non-essential startup programs (Microsoft 365 Copilot, Microsoft Teams, JukeboxPlayer, EpicGamesLauncher)
+6. Opened This PC to check available storage space
+7. Confirmed C: drive showing 16.8 GB free of 236 GB total capacity
+8. Opened Windows Settings and navigated to System Storage
+9. Reviewed Storage breakdown showing 220 GB used with 29.6 GB temporary files
+10. Navigated to C:\Users\dev patel\AppData\Local\Temp folder
+11. Found 2,189 temporary files accumulated over extended period
+12. Selected all temporary files for deletion
+13. Executed Disk Cleanup utility on C: drive
+14. Selected cleanup categories: Temporary Internet Files, Recycle Bin, system temporary files
+15. Confirmed deletion and initiated cleanup process
+16. Monitored cleanup progress (2,269 items recycled from Temp folder)
+17. Verified total disk space freed approximately 29.6 GB significantly improving available storage
+18. Documented resolution steps in ServiceNow Work Notes
+19. Confirmed with user immediate performance improvement
+20. Updated incident to Resolved status
 
 ## Commands Executed
 
-No command-line tools required - Task Manager GUI sufficient for diagnosis and resolution.
+None - GUI-based troubleshooting using Task Manager, File Explorer, and Windows Storage Settings
 
 ## Screenshots
 
-![Screenshot a5](./screenshots/a5.png)  
-*Task Manager showing 94% memory usage*
+![Screenshot a4](./screenshots/a4.png)  
+ServiceNow incidents list showing INC0010009 In Progress - Priority 3 Moderate assigned to Dev Patel
 
-![Screenshot b5](./screenshots/b5.png)  
-*Chrome with 22 processes consuming 1,832.9 MB*
+![Screenshot b4](./screenshots/b4.png)  
+Task Manager Processes tab showing CPU 40% Memory 83% Disk 4% Network 0% current system resource usage
 
-![Screenshot c5](./screenshots/c5.png)  
-*Performance tab - Memory graph at 94%*
+![Screenshot c4](./screenshots/c4.png)  
+Task Manager Startup apps tab displaying enabled and disabled applications with startup impact
 
-![Screenshot d5](./screenshots/d5.png)  
-*Chrome tabs open in browser*
+![Screenshot d4](./screenshots/d4.png)  
+File Explorer This PC view showing Windows C: drive 16.8 GB free of 236 GB with red capacity indicator
 
-![Screenshot e5](./screenshots/e5.png)  
-*Startup applications - 8 enabled*
+![Screenshot e4](./screenshots/e4.png)  
+Task Manager Startup apps with Microsoft 365 Copilot JukeboxPlayer and other programs showing Disabled status
 
-![Screenshot f5](./screenshots/f5.png)  
-*Memory usage after cleanup - 56%*
+![Screenshot f4](./screenshots/f4.png)  
+Windows Settings System Storage showing C: drive 220 GB used 16.8 GB free with Temporary files 29.6 GB breakdown
+
+![Screenshot g4](./screenshots/g4.png)  
+File Explorer Temp folder C:\Users\dev patel\AppData\Local\Temp displaying 2,189 items before cleanup
+
+![Screenshot h4](./screenshots/h4.png)  
+File Explorer Temp folder with all 2,189 items selected showing file types and sizes ready for deletion
+
+![Screenshot i4](./screenshots/i4.png)  
+Windows Disk Cleanup for C: drive dialog with Temporary Internet Files Recycle Bin categories selected
+
+![Screenshot j4](./screenshots/j4.png)  
+Disk Cleanup confirmation dialog asking Are you sure you want to permanently delete these files
+
+![Screenshot k4](./screenshots/k4.png)  
+File Explorer showing Recycling 2,269 items from Temp progress bar at 58% complete
+
+![Screenshot m4](./screenshots/m4.png)  
+ServiceNow incident INC0010009 details page showing In Progress state Hardware category
+
+![Screenshot n4](./screenshots/n4.png)  
+ServiceNow Work Notes documenting diagnostic steps including Task Manager review Storage analysis and Temp folder cleanup
+
+![Screenshot o4](./screenshots/o4.png)  
+ServiceNow Resolution Information showing Resolved status with detailed resolution steps and user confirmation
 
 ## Outcome
 
-**Memory Utilization Reduced:** 94% → 56%  
-**RAM Freed:** 3.0 GB  
-**Before:** 7.4 GB / 7.8 GB used (94%)  
-**After:** 4.4 GB / 7.8 GB used (56%)  
-**Time to Resolution:** 14 minutes  
-**Impact:** Single user  
-**Follow-up Action:** User educated on closing unused browser tabs, scheduled monthly startup review
+**Time to Resolution:** 34 minutes  
+**Status:** Resolved  
+**Resolution Code:** Solution provided  
+**Disk Space Freed:** Approximately 29.6 GB from temporary file cleanup  
+**Verified:** User confirmed immediate performance improvement with applications opening faster and system lag eliminated
 
 ## Technical Skills Demonstrated
 
-- Memory troubleshooting methodology
-- Task Manager process analysis
-- Chrome resource management
-- Startup application optimization
-- Browser extension management
-- Performance monitoring
+- Windows Task Manager resource monitoring
+- Disk usage analysis and troubleshooting
+- Startup program management
+- Windows Storage Settings navigation
+- Temporary file identification and cleanup
+- Disk Cleanup utility operation
+- System performance optimization
 - ServiceNow incident documentation
-- User education on resource management
 
 ## Key Insights
 
-Chrome's multi-process architecture can consume excessive memory with many tabs. Always check for background processes from browsers even when main window is closed. Startup application audits should be performed monthly. 8 GB RAM is minimum for modern multitasking - recommend 16 GB for power users.
+100% disk usage does not mean storage is full but indicates the drive is heavily used by background processes. Task Manager Disk column identifies processes causing high disk activity. Startup programs launching automatically at boot consume disk resources unnecessarily. Temporary files accumulate over time from application installations updates and system processes. Regular temp folder cleanup and Disk Cleanup utility execution prevent performance degradation. Low disk space under 10% capacity significantly impacts Windows performance. Disabling non-essential startup applications reduces boot time and background disk usage.
