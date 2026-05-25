@@ -15,18 +15,6 @@ Resolved help desk incidents in ServiceNow Personal Developer Instance with full
 **Performance incident resolution:** Disk space critical alerts, high RAM utilization, slow boot times  
 **ITSM methodology:** Incident creation, Work Notes, root cause analysis, resolution documentation, KB articles
 
-## Incident Categories
-
-servicenow-help-desk-portfolio/
-├── networking-tickets/
-│   ├── ticket-01-no-internet/
-│   ├── ticket-02-wifi-dns/
-│   └── ticket-03-ip-conflict/
-└── performance-tickets/
-    ├── ticket-04-disk-usage/
-    ├── ticket-05-ram-usage/
-    └── ticket-06-slow-boot/
-
 ## Incidents Resolved
 
 ### Network Connectivity
@@ -42,13 +30,13 @@ Resolved complete internet connectivity loss caused by driver version mismatch. 
 
 ### Windows 11 Performance
 
-**[Disk Space Critical - 29.6 GB Recovered](./performance-tickets/ticket-04-disk-usage/)**  
+**[Disk Space Critical - 2,269 Items Removed](./performance-tickets/ticket-04-disk-usage/)**  
 Resolved C: drive at 92% capacity (6.8 GB free). Executed Storage Sense automation, Disk Cleanup for Windows Update cache, manual temp file purge via command line. Reduced usage to 61% (38.2 GB free).
 
 **[High RAM Utilization - 94% to 56%](./performance-tickets/ticket-05-ram-usage/)**  
 Diagnosed memory exhaustion (7.4 GB / 7.8 GB used) causing application freezes. Terminated Chrome's 22 background processes consuming 1,832 MB, disabled 4 unnecessary startup applications. Reduced utilization to 56% (4.4 GB used).
 
-**[Boot Time Optimization - 10 min to 2 min](./performance-tickets/ticket-06-slow-boot/)**  
+**[Boot Time Optimization - 5-10 min to 1-2 min](./performance-tickets/ticket-06-slow-boot/)**  
 Reduced extreme boot delays caused by 20+ startup services. Audited startup applications via Task Manager and msconfig, disabled non-essential processes, verified SSD health. Achieved sub-2-minute boot time.
 
 ## Technical Capabilities
