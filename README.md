@@ -55,7 +55,7 @@ ServiceNow • Windows 11 • Active Directory • PowerShell • Task Manager �
 
 ## Documentation Methodology
 
-ServiceNow Personal Developer Instance with Windows 11 lab environment. Incidents generated from CompTIA A+ objectives and enterprise help desk patterns. Every ticket follows ITSM best practices: problem statement, diagnostic commands, root cause analysis, resolution steps with timestamps, knowledge base documentation.
+ServiceNow Personal Developer Instance with Windows 11 lab environment. Every ticket follows ITSM best practices: problem statement, diagnostic commands, root cause analysis, resolution steps with timestamps, knowledge base documentation.
 
 ## Contact
 
